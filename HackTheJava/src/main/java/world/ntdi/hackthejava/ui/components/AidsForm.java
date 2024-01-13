@@ -28,6 +28,7 @@ public class AidsForm extends VerticalLayout {
 
         final ComboBox<String> descriptionOfHospitalization = new ComboBox<>("Hospitalization Reason");
         descriptionOfHospitalization.setAllowCustomValue(true);
+        descriptionOfHospitalization.setWidthFull();
         descriptionOfHospitalization.setItems(List.of("Real", "Unga Bunga")); // TODO: Add items to list
         descriptionOfHospitalization.addCustomValueSetListener(comboBoxCustomValueSetEvent ->
                 descriptionOfHospitalization.setValue(comboBoxCustomValueSetEvent.getDetail()));
