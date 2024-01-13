@@ -7,12 +7,12 @@ import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import world.ntdi.hackthejava.ui.components.AidsForm;
 
-@PageTitle("Child Screening")
+@PageTitle("Child Hospital Costs")
 @Route(value = "", layout = MainLayout.class)
 public class ScreeningView extends VerticalLayout {
     public ScreeningView() {
-        final H2 title = new H2("Does your child have AIDS/HIV?");
-        final Paragraph paragraph = new Paragraph("Here at GN, we've trained A.I. data model to predict the progress of children with aids. Fill out the form below and see how your child is predicted to do.");
+        final H2 title = new H2("Is your child in the hospital?");
+        final Paragraph paragraph = new Paragraph("Fill out the cost evaluation survey below, and with our trained A.I. dataset, we can give you a estimate of the final cost.");
 
         add(title, paragraph, new AidsForm());
     }

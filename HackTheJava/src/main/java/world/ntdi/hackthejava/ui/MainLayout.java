@@ -11,7 +11,7 @@ import com.vaadin.flow.theme.lumo.LumoUtility;
 public class MainLayout extends AppLayout {
 
     public MainLayout() {
-        final H1 logo = new H1("GN Screening");
+        final H1 logo = new H1("dcc Screening");
         logo.addClassNames(
                 LumoUtility.FontSize.LARGE,
                 LumoUtility.Margin.MEDIUM
@@ -23,7 +23,7 @@ public class MainLayout extends AppLayout {
 
     private void createDrawer() {
         addToDrawer(new VerticalLayout(
-                new RouterLink("Child Screening", ScreeningView.class)
+                new RouterLink("Child Hospital Costs", ScreeningView.class)
         ));
     }
 }
