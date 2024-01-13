@@ -2,7 +2,6 @@ package world.ntdi.hackthejava.ui.components;
 
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
-import com.vaadin.flow.component.combobox.ComboBox;
 import com.vaadin.flow.component.html.Hr;
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.notification.NotificationVariant;
@@ -10,8 +9,6 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
 import world.ntdi.hackthejava.services.PredictionModelService;
-
-import java.util.List;
 
 public class AidsForm extends VerticalLayout {
     public AidsForm(PredictionModelService predictionModelService) {
@@ -21,18 +18,18 @@ public class AidsForm extends VerticalLayout {
         // Output cost
 
         String insuranceValue;
-        final ComboBox<String> insuranceProvider = new ComboBox<>("Insurance Provider");
-        insuranceProvider.setAllowCustomValue(true);
-        insuranceProvider.setItems(List.of("yuh YUh")); // TODO: Add items to list
-        insuranceProvider.addCustomValueSetListener(comboBoxCustomValueSetEvent ->
-                insuranceProvider.setValue(comboBoxCustomValueSetEvent.getDetail()));
+        final TextField insuranceProvider = new TextField("Insurance Provider");
+//        insuranceProvider.setAllowCustomValue(true);
+//        insuranceProvider.setItems(List.of("Insurance A", "Insurance B", "Insurance C")); // TODO: Add items to list
+//        insuranceProvider.addCustomValueSetListener(comboBoxCustomValueSetEvent ->
+//                insuranceProvider.setValue(comboBoxCustomValueSetEvent.getDetail()));
 
-        final ComboBox<String> descriptionOfHospitalization = new ComboBox<>("Hospitalization Reason");
-        descriptionOfHospitalization.setAllowCustomValue(true);
+        final TextField descriptionOfHospitalization = new TextField("Hospitalization Reason");
+//        descriptionOfHospitalization.setAllowCustomValue(true);
         descriptionOfHospitalization.setWidthFull();
-        descriptionOfHospitalization.setItems(List.of("Real", "Unga Bunga")); // TODO: Add items to list
-        descriptionOfHospitalization.addCustomValueSetListener(comboBoxCustomValueSetEvent ->
-                descriptionOfHospitalization.setValue(comboBoxCustomValueSetEvent.getDetail()));
+//        descriptionOfHospitalization.setItems(List.of("Seizure", "Stroke", "Heart Attack")); // TODO: Add items to list
+//        descriptionOfHospitalization.addCustomValueSetListener(comboBoxCustomValueSetEvent ->
+//                descriptionOfHospitalization.setValue(comboBoxCustomValueSetEvent.getDetail()));
 
         final Button submit = new Button("Evaluate");
         submit.addThemeVariants(ButtonVariant.LUMO_PRIMARY);

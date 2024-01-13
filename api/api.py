@@ -1,4 +1,11 @@
 from flask import Flask, request
+from numpy import loadtxt
+from tf import keras
+# import tf 
+
+
+model = tf.keras.load_model('cost_model.h5')
+model.summary()
 
 app = Flask(__name__)
 
@@ -8,5 +15,5 @@ def hello_world():
     print(args)
     insurance = args['ins']
     descrpition = args['desc']
-    return "69420", 200
+    return model.predict(insurance, descrpition), 200
 
