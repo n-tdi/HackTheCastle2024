@@ -5,6 +5,7 @@ import com.vaadin.flow.component.html.Paragraph;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
+import world.ntdi.hackthejava.services.PredictionModelServiceImpl;
 import world.ntdi.hackthejava.ui.components.AidsForm;
 
 @PageTitle("Child Hospital Costs")
@@ -14,6 +15,6 @@ public class ScreeningView extends VerticalLayout {
         final H2 title = new H2("Is your child in the hospital?");
         final Paragraph paragraph = new Paragraph("Fill out the cost evaluation survey below, and with our trained A.I. dataset, we can give you a estimate of the final cost.");
 
-        add(title, paragraph, new AidsForm());
+        add(title, paragraph, new AidsForm(new PredictionModelServiceImpl()));
     }
 }

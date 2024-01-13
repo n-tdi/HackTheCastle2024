@@ -9,11 +9,12 @@ import com.vaadin.flow.component.notification.NotificationVariant;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
+import world.ntdi.hackthejava.services.PredictionModelService;
 
 import java.util.List;
 
 public class AidsForm extends VerticalLayout {
-    public AidsForm() {
+    public AidsForm(PredictionModelService predictionModelService) {
         // insurance provider
         // Description of gyatt
 
@@ -60,10 +61,9 @@ public class AidsForm extends VerticalLayout {
            final String provider = insuranceProvider.getValue();
            final String description = descriptionOfHospitalization.getValue();
 
-           // TODO: Call george's gyatted function
+           final int value = predictionModelService.predictCost(provider, description);
 
-            predictedCost.setValue("$1,000,000");
-            System.out.println("Hello");
+           predictedCost.setValue("$" + value);
         });
     }
 }

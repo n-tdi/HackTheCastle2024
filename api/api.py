@@ -8,5 +8,5 @@ def hello_world():
     print(args)
     insurance = args['ins']
     descrpition = args['desc']
-    return "Hello, World!" + insurance + descrpition
+    return "69420", 200
 
